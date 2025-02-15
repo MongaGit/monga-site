@@ -6,8 +6,3 @@ services:
     container_name: mongasite
     ports:
       - "5173:5173"
-    volumes:
-      - .:/app
-    environment:
-      - PORT=5173
-
