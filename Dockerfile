@@ -5,7 +5,9 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copiar os arquivos do projeto
-COPY package.json package-lock.json ./
+COPY package*.json ./
+
+# Instalar dependências
 RUN npm install
 
 # Copiar o restante dos arquivos
@@ -15,4 +17,4 @@ COPY . .
 EXPOSE 5173
 
 # Comando para iniciar o servidor de desenvolvimento
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
